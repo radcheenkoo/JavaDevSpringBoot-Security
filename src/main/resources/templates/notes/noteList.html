@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Note list</title>
+</head>
+<body>
+
+
+<h1 th:text="'Notes count: ' + ${notes.size()}"></h1>
+
+<div th:each="note : ${notes}">
+    <div th:text="'id: ' + ${note.id}"></div>
+    <div th:text="'Title: ' + ${note.title}"></div>
+    <div th:text="'Content: ' + ${note.content}"></div>
+
+    <a th:href="'http://localhost:8080/note/edit?id=' + ${note.id}">Update</a>
+</div>
+</body>
+</html>
